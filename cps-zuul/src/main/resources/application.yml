@@ -1,0 +1,25 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: cps-zuul
+eureka:
+  client:
+    service-url:
+      # 填写注册中心服务器地址
+      defaultZone: http://localhost:8081/eureka
+
+zuul:
+  routes:
+#    路由名称，随意命名
+    cps-user:
+      path: /user/**
+      serviceId: cps-user
+
+    cps-business:
+      path: /business/**
+      serviceId: cps-business
+#  设置不能通过服务名访问
+  ignored-services: "*"
+
