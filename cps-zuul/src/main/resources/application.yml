@@ -7,12 +7,12 @@ spring:
 eureka:
   client:
     service-url:
-      # ÌîĞ´×¢²áÖĞĞÄ·şÎñÆ÷µØÖ·
+      # å¡«å†™æ³¨å†Œä¸­å¿ƒæœåŠ¡å™¨åœ°å€
       defaultZone: http://localhost:8081/eureka
 
 zuul:
   routes:
-#    Â·ÓÉÃû³Æ£¬ËæÒâÃüÃû
+#    è·¯ç”±åç§°ï¼Œéšæ„å‘½å
     cps-user:
       path: /user/**
       serviceId: cps-user
@@ -20,6 +20,6 @@ zuul:
     cps-business:
       path: /business/**
       serviceId: cps-business
-#  ÉèÖÃ²»ÄÜÍ¨¹ı·şÎñÃû·ÃÎÊ
+#  è®¾ç½®ä¸èƒ½é€šè¿‡æœåŠ¡åè®¿é—®
   ignored-services: "*"
 

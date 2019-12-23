@@ -1,0 +1,41 @@
+server:
+  # 服务端口号
+  port: 8082
+spring:
+  application:
+    # 服务名称 - 服务之间使用名称进行通讯
+    name: cps-user
+  datasource:
+    url: jdbc:mysql://localhost:3306/cps?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    #    url: jdbc:mysql://39.100.6.47:3306/precipitate?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE
+    username: root
+    password: 123456
+    #    username: jiuyao
+    #    password: JiuYao123*
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.cps.user
+
+
+eureka:
+  client:
+    service-url:
+      # 填写注册中心服务器地址
+      defaultZone: http://localhost:8081/eureka
+    # 是否需要将自己注册到注册中心
+    register-with-eureka: true
+    # 是否需要搜索服务信息
+    fetch-registry: true
+    #  instance:
+    # 使用ip地址注册到注册中心
+    #    prefer-ip-address: false
+    # 注册中心列表中显示的状态参数
+#    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+ribbon:
+  #建立连接超时时间
+  ReadTimeout: 5000
+  #读取资源超时间
+  ConnectTimeout: 5000
+
