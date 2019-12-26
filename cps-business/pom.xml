@@ -14,10 +14,16 @@
     <name>business</name>
     <description>Demo project for Spring Boot</description>
 
+    <packaging>pom</packaging>
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
     </properties>
+
+    <modules>
+        <module>client</module>
+        <module>order</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -31,6 +37,14 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-config-server</artifactId>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
         <!-- 引用Mybatis 和 Mysql驱动开始  -->
         <dependency>

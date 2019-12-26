@@ -1,9 +1,9 @@
 server:
-  # ·şÎñ¶Ë¿ÚºÅ
+  # æœåŠ¡ç«¯å£å·
   port: 8082
 spring:
   application:
-    # ·şÎñÃû³Æ - ·şÎñÖ®¼äÊ¹ÓÃÃû³Æ½øĞĞÍ¨Ñ¶
+    # æœåŠ¡åç§° - æœåŠ¡ä¹‹é—´ä½¿ç”¨åç§°è¿›è¡Œé€šè®¯
     name: cps-user
   datasource:
     url: jdbc:mysql://localhost:3306/cps?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
@@ -13,6 +13,14 @@ spring:
     #    username: jiuyao
     #    password: JiuYao123*
     driver-class-name: com.mysql.cj.jdbc.Driver
+#  cloud:
+#    config:
+#      uri: http://127.0.0.1:8008/
+#      profile: dev
+#      label: master
+#      discovery:
+#        enabled: true
+#        service-id: config-server
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
   type-aliases-package: com.cps.user
@@ -21,21 +29,21 @@ mybatis:
 eureka:
   client:
     service-url:
-      # ÌîĞ´×¢²áÖĞĞÄ·şÎñÆ÷µØÖ·
+      # å¡«å†™æ³¨å†Œä¸­å¿ƒæœåŠ¡å™¨åœ°å€
       defaultZone: http://localhost:8081/eureka
-    # ÊÇ·ñĞèÒª½«×Ô¼º×¢²áµ½×¢²áÖĞĞÄ
+    # æ˜¯å¦éœ€è¦å°†è‡ªå·±æ³¨å†Œåˆ°æ³¨å†Œä¸­å¿ƒ
     register-with-eureka: true
-    # ÊÇ·ñĞèÒªËÑË÷·şÎñĞÅÏ¢
+    # æ˜¯å¦éœ€è¦æœç´¢æœåŠ¡ä¿¡æ¯
     fetch-registry: true
     #  instance:
-    # Ê¹ÓÃipµØÖ·×¢²áµ½×¢²áÖĞĞÄ
+    # ä½¿ç”¨ipåœ°å€æ³¨å†Œåˆ°æ³¨å†Œä¸­å¿ƒ
     #    prefer-ip-address: false
-    # ×¢²áÖĞĞÄÁĞ±íÖĞÏÔÊ¾µÄ×´Ì¬²ÎÊı
+    # æ³¨å†Œä¸­å¿ƒåˆ—è¡¨ä¸­æ˜¾ç¤ºçš„çŠ¶æ€å‚æ•°
 #    instance-id: ${spring.cloud.client.ip-address}:${server.port}
 
 ribbon:
-  #½¨Á¢Á¬½Ó³¬Ê±Ê±¼ä
+  #å»ºç«‹è¿æ¥è¶…æ—¶æ—¶é—´
   ReadTimeout: 5000
-  #¶ÁÈ¡×ÊÔ´³¬Ê±¼ä
+  #è¯»å–èµ„æºè¶…æ—¶é—´
   ConnectTimeout: 5000
 

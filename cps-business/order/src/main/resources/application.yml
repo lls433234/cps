@@ -1,7 +1,7 @@
-
 server:
   # 服务端口号
   port: 8083
+
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/cps?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
@@ -14,6 +14,7 @@ spring:
   application:
     # 服务名称 - 服务之间使用名称进行通讯
     name: cps-business
+
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
   type-aliases-package: com.cps.order
